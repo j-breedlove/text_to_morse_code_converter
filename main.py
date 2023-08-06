@@ -14,38 +14,17 @@ word = input("Enter a word: ").upper().strip()
 
 
 def convert_word(word_to_convert, morse_code=None):
-    """
-    Converts a word into its corresponding Morse code representation.
-
-    Args:
-        word_to_convert (str): The word to be converted to Morse code.
-        morse_code (dict, optional): A dictionary containing the mapping of letters to Morse code.
-            If not provided, the default 'code' dictionary is used.
-
-    Returns:
-        str: The Morse code representation of the input word.
-
-    Examples:
-        >>> convert_word('HELLO')
-        '.... . .-.. .-.. ---'
-
-        >>> convert_word('WORLD', {'W': '.--', 'O': '---', 'R': '.-.', 'L': '.-..', 'D': '-..'})
-        '.-- --- .-. .-.. -..'
-    """
     if morse_code is None:
         morse_code = code
-    converted_word = ""
-    for letters in word_to_convert:
-        converted_word += morse_code[letters]
-    return converted_word
 
+    try:
+        return ' '.join(morse_code[letter] for letter in word_to_convert)
+    except KeyError:
+        return "Invalid character in the input"
 
-print(f"{word} in morse code is {convert_word(word)} in morse code.")
+print(f"{word} in morse code is: {convert_word(word)}")
 
 # using lambda function
-convert_word_2 = lambda word_to_convert: ' '.join(code[letter] for letter in word_to_convert)
-morse_code_2 = convert_word_2(word)
-print(f"{word} in Morse code is: {morse_code_2}")
-
-
+# convert_word_lambda = lambda word_to_convert: ' '.join(code.get(letter, ' ') for letter in word_to_convert)
+# print(f"{word} in Morse code is: {convert_word_lambda(word)}")
 

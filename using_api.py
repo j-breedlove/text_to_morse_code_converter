@@ -1,4 +1,9 @@
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+MORSE_API_KEY = os.getenv("MORSE_API_KEY")
 
 url = "https://gsamuel-morse-code-v1.p.rapidapi.com/"
 
@@ -6,7 +11,7 @@ text = input("Enter a word: ").upper().strip()
 payload = {"text": text}
 headers = {
     "content-type": "application/json",
-    "X-RapidAPI-Key": "7ea7abb91amsh3beb9cae6c70110p1e6f3ejsnba5a4bace125",
+    "X-RapidAPI-Key": MORSE_API_KEY,
     "X-RapidAPI-Host": "gsamuel-morse-code-v1.p.rapidapi.com"
 }
 
