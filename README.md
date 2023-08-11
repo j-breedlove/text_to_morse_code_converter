@@ -1,7 +1,15 @@
 # Python Morse Code Converter
 
 This project is a simple Python script that converts an input string into Morse code.
-
+![text_to_morse.png](text_to_morse.png)
+1. Clone the repository:
+```bash
+git clone https://github.com/j-breedlove/text_to_morse_code_converter.git
+```
+2. Change directories:
+```bash
+cd text_to_morse_code_converter
+```
 ## Requirements
 
 This project doesn't have any external dependencies and only requires Python 3.6 or higher to run.
@@ -11,7 +19,7 @@ This project doesn't have any external dependencies and only requires Python 3.6
 To run the script, use the command:
 
 ```bash
-python morse_code_converter.py
+python main.py
 ```
 
 You will then be prompted to enter a word. The script will convert this word into Morse code and print the output.
@@ -23,7 +31,7 @@ The project also provides a function `convert_word` and a lambda function `conve
 Example:
 
 ```python
-from morse_code_converter import convert_word, convert_word_lambda
+from main import convert_word, convert_word_lambda
 
 print(convert_word('HELLO'))  # outputs '.... . .-.. .-.. ---'
 print(convert_word_lambda('WORLD'))  # outputs '.-- --- .-. .-.. -..'

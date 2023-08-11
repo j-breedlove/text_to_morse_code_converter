@@ -22,9 +22,9 @@ def convert_word(word_to_convert, morse_code=None):
     except KeyError:
         return "Invalid character in the input"
 
+
 print(f"{word} in morse code is: {convert_word(word)}")
 
 # using lambda function
 # convert_word_lambda = lambda word_to_convert: ' '.join(code.get(letter, ' ') for letter in word_to_convert)
 # print(f"{word} in Morse code is: {convert_word_lambda(word)}")
-
